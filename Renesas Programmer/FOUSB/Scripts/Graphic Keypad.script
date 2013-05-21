@@ -1,0 +1,13 @@
+// FoUSB script file
+Desc=Graphic Keypad
+File=S:\Digiflex\Production\Firmware\CP1000 Rev 1.01 Graphic Keypad\cp100_1r01.mot
+MCU=M30102F3
+Reprogram=No
+ID=00000000000000
+Erase=Yes
+EraseAll=Yes
+Program=Yes
+Verify=Yes
+DispSuccessful=No
+DisableMsgBoxes=No
+LogMessages=No

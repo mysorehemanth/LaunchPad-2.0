@@ -1,0 +1,734 @@
+object AddNewModuleForm: TAddNewModuleForm
+  Left = 738
+  Top = 102
+  Width = 526
+  Height = 780
+  VertScrollBar.Style = ssHotTrack
+  Caption = 'Add New Module'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object IniFileDir: TLabel
+    Left = 24
+    Top = 704
+    Width = 30
+    Height = 13
+    Caption = 'INI file'
+  end
+  object LMDFill1: TLMDFill
+    Left = 16
+    Top = 688
+    Width = 465
+    Height = 17
+    Bevel.Mode = bmCustom
+    Caption.Font.Charset = DEFAULT_CHARSET
+    Caption.Font.Color = clWindowText
+    Caption.Font.Height = -11
+    Caption.Font.Name = 'MS Sans Serif'
+    Caption.Font.Style = []
+    FillObject.AlphaLevel = 255
+  end
+  object FrontStepButton: TLMDButton
+    Left = 24
+    Top = 648
+    Width = 145
+    Height = 41
+    Caption = '<< Front Step'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    OnClick = FrontStepButtonClick
+  end
+  object NextStepButton: TLMDButton
+    Left = 328
+    Top = 648
+    Width = 145
+    Height = 41
+    Caption = 'Next Step >>'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    OnClick = NextStepButtonClick
+  end
+  object CancelButton: TLMDButton
+    Left = 176
+    Top = 648
+    Width = 145
+    Height = 41
+    Caption = 'Cancel'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+    OnClick = CancelButtonClick
+  end
+  object ModuleSelectionPageCtr: TLMDPageControl
+    Left = 24
+    Top = 0
+    Width = 449
+    Height = 641
+    TabOrder = 3
+    Options = [toNoTabIfEmpty, toShowBorder, toShowFocusRect, toShowAccelChar]
+    ShowTabs = False
+    DockOrientation = doNoOrient
+    ActivePage = ModuleCfgSheet2
+    object LANTypeSheet: TLMDTabSheet
+      Left = 4
+      Top = 4
+      Width = 441
+      Height = 633
+      Bevel.Mode = bmCustom
+      Caption = 'LAN Type'
+      DesignSize = (
+        441
+        633)
+      object LMDHTMLLabel12: TLMDHTMLLabel
+        Left = 104
+        Top = 24
+        Width = 249
+        Height = 33
+        Alignment = taLeftJustify
+        Bevel.Mode = bmCustom
+        Caption = 'Selected LAN Type:'
+        Layout = tlTop
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -24
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object SelectedLANTypeText: TLMDHTMLLabel
+        Left = 69
+        Top = 64
+        Width = 313
+        Height = 33
+        Alignment = taCenter
+        Bevel.Mode = bmCustom
+        Caption = 'LAN Type'
+        Layout = tlTop
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -24
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+        Anchors = [akTop]
+      end
+      object RS485Button: TLMDButton
+        Tag = 1
+        Left = 112
+        Top = 128
+        Width = 217
+        Height = 49
+        Caption = 'RS485 LAN'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 0
+        OnClick = LanTypeButtonClick
+      end
+      object OldLANButton: TLMDButton
+        Tag = 2
+        Left = 112
+        Top = 240
+        Width = 217
+        Height = 49
+        Caption = 'OLD LAN'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 1
+        OnClick = LanTypeButtonClick
+      end
+    end
+    object ModuleTypeSheet: TLMDTabSheet
+      Tag = 2
+      Left = 4
+      Top = 4
+      Width = 441
+      Height = 633
+      Bevel.Mode = bmCustom
+      Caption = 'Module Type'
+      DesignSize = (
+        441
+        633)
+      object LMDHTMLLabel14: TLMDHTMLLabel
+        Left = 88
+        Top = 24
+        Width = 273
+        Height = 33
+        Alignment = taLeftJustify
+        Bevel.Mode = bmCustom
+        Caption = 'Selected Module Type:'
+        Layout = tlTop
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -24
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object SelectedModuleTypeText: TLMDHTMLLabel
+        Left = 32
+        Top = 64
+        Width = 385
+        Height = 33
+        Alignment = taCenter
+        Bevel.Mode = bmCustom
+        Caption = 'Module Type'
+        Layout = tlCenter
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -24
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+        Anchors = [akTop]
+        BiDiMode = bdLeftToRight
+        ParentBiDiMode = False
+      end
+      object InputModuleButton: TLMDButton
+        Tag = 1
+        Left = 112
+        Top = 125
+        Width = 217
+        Height = 49
+        Caption = 'Input Module'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 0
+        OnClick = ModuleTypeButtonClick
+      end
+      object OutputModuleButton: TLMDButton
+        Tag = 2
+        Left = 112
+        Top = 184
+        Width = 217
+        Height = 49
+        Caption = 'Output Module'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 1
+        OnClick = ModuleTypeButtonClick
+      end
+      object KeyPadModuleButton: TLMDButton
+        Tag = 3
+        Left = 112
+        Top = 240
+        Width = 217
+        Height = 49
+        Caption = 'KeyPad Module'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 2
+        OnClick = ModuleTypeButtonClick
+      end
+      object PowerSupplerModuleButton: TLMDButton
+        Tag = 4
+        Left = 112
+        Top = 296
+        Width = 217
+        Height = 49
+        Caption = 'PowerSuppler Module'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 3
+        OnClick = ModuleTypeButtonClick
+      end
+      object PanelButton: TLMDButton
+        Tag = 5
+        Left = 112
+        Top = 352
+        Width = 217
+        Height = 49
+        Caption = 'Panel'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 4
+        OnClick = ModuleTypeButtonClick
+      end
+      object DoorCtrModuleButton: TLMDButton
+        Tag = 6
+        Left = 112
+        Top = 408
+        Width = 217
+        Height = 49
+        Caption = 'Door Controler Module'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 5
+        OnClick = ModuleTypeButtonClick
+      end
+      object ExpanderButton: TLMDButton
+        Tag = 7
+        Left = 112
+        Top = 464
+        Width = 217
+        Height = 49
+        Caption = 'Expander Module'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 6
+        OnClick = ModuleTypeButtonClick
+      end
+      object OtherTypeModuleButton: TLMDButton
+        Tag = 8
+        Left = 112
+        Top = 520
+        Width = 217
+        Height = 49
+        Caption = 'Other Type Module'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 7
+        OnClick = ModuleTypeButtonClick
+      end
+    end
+    object ModuleCfgSheet1: TLMDTabSheet
+      Tag = 3
+      Left = 4
+      Top = 4
+      Width = 441
+      Height = 633
+      Bevel.Mode = bmCustom
+      Caption = 'Firmware'
+      object LMDHTMLLabel1: TLMDHTMLLabel
+        Left = 144
+        Top = 112
+        Width = 145
+        Height = 33
+        Alignment = taLeftJustify
+        Bevel.Mode = bmCustom
+        Caption = '* Module Name:'
+        Layout = tlTop
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+      end
+      object LMDHTMLLabel2: TLMDHTMLLabel
+        Left = 168
+        Top = 224
+        Width = 113
+        Height = 33
+        Alignment = taLeftJustify
+        Bevel.Mode = bmCustom
+        Caption = '* Firmware:'
+        Layout = tlTop
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+      end
+      object ModuleSectionIDLabel1: TLMDHTMLLabel
+        Left = 304
+        Top = 24
+        Width = 97
+        Height = 41
+        Alignment = taLeftJustify
+        Bevel.Mode = bmCustom
+        Caption = '[1101]'
+        Layout = tlTop
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlue
+        Font.Height = -27
+        Font.Name = 'Arial Black'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object LMDHTMLLabel5: TLMDHTMLLabel
+        Left = 16
+        Top = 32
+        Width = 305
+        Height = 33
+        Alignment = taLeftJustify
+        Bevel.Mode = bmCustom
+        Caption = 'Free Module Section ID:'
+        Layout = tlTop
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -24
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object ModuleNameEdit: TLMDEdit
+        Left = 32
+        Top = 152
+        Width = 377
+        Height = 33
+        BackFX.AlphaBlend.FillObject.AlphaLevel = 255
+        Bevel.Mode = bmWindows
+        Caret.BlinkRate = 530
+        TabOrder = 0
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        CustomButtons = <>
+        PasswordChar = #0
+      end
+      object FirmwareDirEdit: TLMDEdit
+        Left = 32
+        Top = 264
+        Width = 353
+        Height = 33
+        BackFX.AlphaBlend.FillObject.AlphaLevel = 255
+        Bevel.Mode = bmWindows
+        Caret.BlinkRate = 530
+        DragCursor = crHandPoint
+        TabOrder = 1
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        CustomButtons = <>
+        PasswordChar = #0
+      end
+      object FirmwareDockButton: TLMDDockButton
+        Left = 384
+        Top = 264
+        Width = 33
+        Height = 33
+        TabOrder = 2
+        OnClick = FirmwareDockButtonClick
+        Glyph.Data = {
+          E6000000424DE60000000000000076000000280000000D0000000E0000000100
+          0400000000007000000000000000000000001000000010000000000000000000
+          8000008000000080800080000000800080008080000080808000C0C0C0000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+          3000333333333333300033333333333330003333333333333000333333333333
+          3000333333333333300033003003003330003300300300333000333333333333
+          3000333333333333300033333333333330003333333333333000333333333333
+          30003333333333333000}
+      end
+    end
+    object ModuleCfgSheet2: TLMDTabSheet
+      Left = 4
+      Top = 4
+      Width = 441
+      Height = 633
+      Bevel.Mode = bmCustom
+      Caption = 'Programmer'
+      object LMDHTMLLabel13: TLMDHTMLLabel
+        Left = 16
+        Top = 32
+        Width = 305
+        Height = 33
+        Alignment = taLeftJustify
+        Bevel.Mode = bmCustom
+        Caption = 'Free Module Section ID:'
+        Layout = tlTop
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -24
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object LMDHTMLLabel10: TLMDHTMLLabel
+        Left = 152
+        Top = 112
+        Width = 145
+        Height = 33
+        Alignment = taLeftJustify
+        Bevel.Mode = bmCustom
+        Caption = '* Programmer :'
+        Layout = tlTop
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+      end
+      object LMDHTMLLabel11: TLMDHTMLLabel
+        Left = 184
+        Top = 224
+        Width = 73
+        Height = 33
+        Alignment = taLeftJustify
+        Bevel.Mode = bmCustom
+        Caption = '  Script :'
+        Layout = tlTop
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+      end
+      object ModuleSectionIDLabel2: TLMDHTMLLabel
+        Left = 304
+        Top = 24
+        Width = 97
+        Height = 41
+        Alignment = taLeftJustify
+        Bevel.Mode = bmCustom
+        Caption = '[1101]'
+        Layout = tlTop
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlue
+        Font.Height = -27
+        Font.Name = 'Arial Black'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object ProgrammerTypeCombo: TComboBox
+        Left = 32
+        Top = 152
+        Width = 385
+        Height = 30
+        Style = csOwnerDrawFixed
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ItemHeight = 24
+        ParentFont = False
+        TabOrder = 0
+        Items.Strings = (
+          ' '
+          'DigifleX Flash Programmer'
+          'NEC Programmer'
+          'ICD3 Programmer'
+          'Renesas Programmer')
+      end
+      object ScriptDirEdit: TLMDEdit
+        Left = 32
+        Top = 264
+        Width = 353
+        Height = 33
+        BackFX.AlphaBlend.FillObject.AlphaLevel = 255
+        Bevel.Mode = bmWindows
+        Caret.BlinkRate = 530
+        TabOrder = 1
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        CustomButtons = <>
+        PasswordChar = #0
+      end
+      object ScriptDockButton: TLMDDockButton
+        Left = 384
+        Top = 264
+        Width = 33
+        Height = 33
+        TabOrder = 2
+        OnClick = ScriptDockButtonClick
+        Glyph.Data = {
+          E6000000424DE60000000000000076000000280000000D0000000E0000000100
+          0400000000007000000000000000000000001000000010000000000000000000
+          8000008000000080800080000000800080008080000080808000C0C0C0000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+          3000333333333333300033333333333330003333333333333000333333333333
+          3000333333333333300033003003003330003300300300333000333333333333
+          3000333333333333300033333333333330003333333333333000333333333333
+          30003333333333333000}
+      end
+    end
+    object ModuleCfgSheet3: TLMDTabSheet
+      Left = 4
+      Top = 4
+      Width = 441
+      Height = 633
+      Bevel.Mode = bmCustom
+      Caption = 'Picture'
+      object Image1: TImage
+        Left = 24
+        Top = 200
+        Width = 393
+        Height = 393
+        Cursor = crHandPoint
+        AutoSize = True
+        Center = True
+        Constraints.MaxHeight = 400
+        Constraints.MaxWidth = 500
+        DragCursor = crHandPoint
+        DragKind = dkDock
+        Proportional = True
+        Stretch = True
+        OnDblClick = LMDDockButton3Click
+      end
+      object LMDHTMLLabel9: TLMDHTMLLabel
+        Left = 88
+        Top = 88
+        Width = 273
+        Height = 33
+        Alignment = taLeftJustify
+        Bevel.Mode = bmCustom
+        Caption = 'Select a Picture for Module :'
+        Layout = tlTop
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+      end
+      object ModuleSectionIDLabel3: TLMDHTMLLabel
+        Left = 304
+        Top = 24
+        Width = 97
+        Height = 41
+        Alignment = taLeftJustify
+        Bevel.Mode = bmCustom
+        Caption = '[1101]'
+        Layout = tlTop
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlue
+        Font.Height = -27
+        Font.Name = 'Arial Black'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object LMDHTMLLabel16: TLMDHTMLLabel
+        Left = 16
+        Top = 32
+        Width = 305
+        Height = 33
+        Alignment = taLeftJustify
+        Bevel.Mode = bmCustom
+        Caption = 'Free Module Section ID:'
+        Layout = tlTop
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -24
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object LMDDockButton3: TLMDDockButton
+        Left = 344
+        Top = 144
+        Width = 33
+        Height = 33
+        TabOrder = 0
+        OnClick = LMDDockButton3Click
+        Glyph.Data = {
+          E6000000424DE60000000000000076000000280000000D0000000E0000000100
+          0400000000007000000000000000000000001000000010000000000000000000
+          8000008000000080800080000000800080008080000080808000C0C0C0000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+          3000333333333333300033333333333330003333333333333000333333333333
+          3000333333333333300033003003003330003300300300333000333333333333
+          3000333333333333300033333333333330003333333333333000333333333333
+          30003333333333333000}
+      end
+      object PhotoDirEdit: TLMDEdit
+        Left = 64
+        Top = 144
+        Width = 281
+        Height = 33
+        BackFX.AlphaBlend.FillObject.AlphaLevel = 255
+        Bevel.Mode = bmWindows
+        Caret.BlinkRate = 530
+        TabOrder = 1
+        OnChange = PhotoDirEditChange
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        CustomButtons = <>
+        PasswordChar = #0
+      end
+    end
+  end
+  object SaveButton: TLMDButton
+    Left = 328
+    Top = 648
+    Width = 145
+    Height = 41
+    Caption = 'Save'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 4
+    OnClick = SaveButtonClick
+  end
+  object OpenDialog: TOpenDialog
+    Options = [ofNoChangeDir, ofFileMustExist, ofNoNetworkButton, ofNoDereferenceLinks, ofEnableSizing, ofForceShowHidden]
+    OptionsEx = [ofExNoPlacesBar]
+    Left = 32
+  end
+  object OpenPictureDialog: TOpenPictureDialog
+    Options = [ofFileMustExist, ofEnableSizing]
+    Left = 72
+  end
+end

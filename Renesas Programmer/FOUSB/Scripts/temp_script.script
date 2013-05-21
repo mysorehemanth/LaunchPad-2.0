@@ -1,0 +1,13 @@
+// FoUSB script file
+Desc=RS485 Output Expander
+File=C:\temp\sntemp.mot
+File=C:\temp\sntemp.mot
+MCU=M30102F3
+Reprogram=No
+ID=00000000000000
+Erase=No
+EraseAll=Yes
+Program=Yes
+Verify=Yes
+DispSuccessful=No
+//DOM Address=S2080FFDF8

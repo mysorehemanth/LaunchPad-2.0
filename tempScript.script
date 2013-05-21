@@ -1,0 +1,11 @@
+// FoUSB script file
+Desc=Power Supply
+File=S:\Robert_JIANG\LaunchPad 2.0\Renesas Programmer\temp.mot
+MCU=M30102F3
+Reprogram=No
+ID=00000000000000
+Erase=Yes
+Program=Yes
+Verify=Yes
+DispSuccessful=Yes
+//File dir will be changed when running launchpad 2.0

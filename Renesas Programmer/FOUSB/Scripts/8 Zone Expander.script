@@ -1,0 +1,10 @@
+// FoUSB script file
+Desc=8 Zone Expander
+File=S:\Digiflex\Production\Firmware\CM104 8 Zone Expander\8ZoneX_1R02.mot
+MCU=M30102F3
+Reprogram=No
+ID=00000000000000
+Erase=Yes
+Program=Yes
+Verify=Yes
+DispSuccessful=Yes

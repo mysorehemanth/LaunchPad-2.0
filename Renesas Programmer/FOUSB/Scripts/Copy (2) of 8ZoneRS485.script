@@ -1,0 +1,10 @@
+// FoUSB script file
+Desc=8 Zone Expander
+File=c:\temp\snzx_2r02.mot
+MCU=M30102F3
+Reprogram=No
+ID=00000000000000
+Erase=Yes
+Program=Yes
+Verify=Yes
+DispSuccessful=Yes

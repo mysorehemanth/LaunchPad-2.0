@@ -1,0 +1,82 @@
+; Renesas Flash-Over-USB Device Driver install
+; Version 2.0
+;
+; Updated: 9/13/2001
+;
+
+[Version]
+Signature="$CHICAGO$"
+Class=USB
+ClassGUID={36FC9E60-C465-11CF-8056-444553540000}
+provider=%MfgName%
+DriverVer=09/13/2001,2.0.0.0
+
+[SourceDisksNames]
+1=%DiskName%,,,
+
+[SourceDisksFiles]
+fousb.sys = 1
+
+[Manufacturer]
+%MfgName%=DeviceList
+
+[DeviceList]
+%USB\VID_0452&PID_641F.DeviceDesc%=FOUSB.Dev, USB\VID_0452&PID_641F
+%USB\VID_06D3&PID_641F.DeviceDesc%=FOUSB.Dev, USB\VID_06D3&PID_641F
+%USB\VID_0452&PID_245F.DeviceDesc%=FOUSB.Dev, USB\VID_0452&PID_245F
+%USB\VID_06D3&PID_245F.DeviceDesc%=FOUSB.Dev, USB\VID_06D3&PID_245F
+%USB\VID_06D3&PID_380F.DeviceDesc%=FOUSB.Dev, USB\VID_06D3&PID_380F
+%USB\VID_06D3&PID_382F.DeviceDesc%=FOUSB.Dev, USB\VID_06D3&PID_382F
+
+;[PreCopySection]
+;HKR,,NoSetupUI,,1
+
+[DestinationDirs]
+DefaultDestDir = 10,System32\Drivers
+FOUSB.Files.Ext = 10,System32\Drivers
+
+;--------------------
+; Windows 98 Section
+;--------------------
+[FOUSB.Dev]
+CopyFiles=FOUSB.Files.Ext
+AddReg=FOUSB.AddReg
+
+;--------------------
+; Windows NT Section
+;--------------------
+[FOUSB.Dev.NT]
+CopyFiles=FOUSB.Files.Ext
+AddReg=FOUSB.AddReg
+
+[FOUSB.Dev.NT.Services]
+Addservice = FOUSB, 0x00000002, FOUSB.AddService
+
+[FOUSB.AddService]
+DisplayName    = %FOUSB.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\FOUSB.sys
+LoadOrderGroup = Base
+
+[FOUSB.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,fousb.sys
+
+[FOUSB.Files.Ext]
+fousb.sys
+
+;---------------------------------------------------------------;
+
+[Strings]
+MfgName="Renesas Technology America, Inc."
+USB\VID_0452&PID_641F.DeviceDesc="Renesas Flash-Over-USB for M37641F"
+USB\VID_06D3&PID_641F.DeviceDesc="Renesas Flash-Over-USB for M37641F"
+USB\VID_0452&PID_245F.DeviceDesc="Renesas Flash-Over-USB for M30245F"
+USB\VID_06D3&PID_245F.DeviceDesc="Renesas Flash-Over-USB for M30245F"
+USB\VID_06D3&PID_380F.DeviceDesc="Renesas Flash-Over-USB for M38K0"
+USB\VID_06D3&PID_382F.DeviceDesc="Renesas Flash-Over-USB for M38K2"
+FOUSB.SvcDesc="Flash-Over-USB Device Driver"
+DiskName="Renesas USB Installation Disk"
+

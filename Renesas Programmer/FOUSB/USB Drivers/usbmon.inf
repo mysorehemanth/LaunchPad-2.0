@@ -1,0 +1,73 @@
+; Renesas USB Monitor Device Driver install
+; Version 1.0
+;
+; Updated: 11/13/2001
+;
+
+[Version]
+Signature="$CHICAGO$"
+Class=USB
+ClassGUID={36FC9E60-C465-11CF-8056-444553540000}
+provider=%MfgName%
+DriverVer=09/13/2001,2.0.0.0
+
+[SourceDisksNames]
+1=%DiskName%,,,
+
+[SourceDisksFiles]
+usbmon.sys = 1
+
+[Manufacturer]
+%MfgName%=DeviceList
+
+[DeviceList]
+%USB\VID_0452&PID_ABCD.DeviceDesc%=USBMON.Dev, USB\VID_0452&PID_ABCD
+%USB\VID_06D3&PID_ABCD.DeviceDesc%=USBMON.Dev, USB\VID_06D3&PID_ABCD
+
+;[PreCopySection]
+;HKR,,NoSetupUI,,1
+
+[DestinationDirs]
+DefaultDestDir = 10,System32\Drivers
+USBMON.Files.Ext = 10,System32\Drivers
+
+;--------------------
+; Windows 98 Section
+;--------------------
+[USBMON.Dev]
+CopyFiles=USBMON.Files.Ext
+AddReg=USBMON.AddReg
+
+;--------------------
+; Windows NT Section
+;--------------------
+[USBMON.Dev.NT]
+CopyFiles=USBMON.Files.Ext
+AddReg=USBMON.AddReg
+
+[USBMON.Dev.NT.Services]
+Addservice = USBMON, 0x00000002, USBMON.AddService
+
+[USBMON.AddService]
+DisplayName    = %USBMON.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\usbmon.sys
+LoadOrderGroup = Base
+
+[USBMON.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,usbmon.sys
+
+[USBMON.Files.Ext]
+usbmon.sys
+
+;---------------------------------------------------------------;
+
+[Strings]
+MfgName="Renesas Technology America, Inc."
+USB\VID_0452&PID_ABCD.DeviceDesc="Renesas FoUSB-ICD"
+USB\VID_06D3&PID_ABCD.DeviceDesc="Renesas FoUSB-ICD"
+USBMON.SvcDesc="USB Monitor Device Driver"
+DiskName="Renesas USB Installation Disk"

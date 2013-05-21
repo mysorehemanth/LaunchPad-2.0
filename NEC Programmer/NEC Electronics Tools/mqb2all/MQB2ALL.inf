@@ -1,0 +1,138 @@
+; Installation inf for the NEC Electronics MINICUBE On-chip-debug Emulator
+;
+; Copyright(C) NEC Electronics Corporation 2004,2005
+;
+; Windows 98/Me/2000/XP
+;
+
+[Version]
+Signature="$CHICAGO$"
+Class=NECPCIF
+ClassGuid={061FDEC0-8C84-11d3-8681-00A0C961772B}
+Provider=%MQB2ALL.Provider%
+DriverVer=01/18/2005,1.10.1.1  ; MM/DD/YYYY,Ver  ; See also MQB2ALL.Dev section
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Source Media Information Sections
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[SourceDisksNames]
+1=%MQB2ALL.DiskDesc%,,,
+
+[SourceDisksFiles]
+MQB2ALL.sys = 1
+MQB2ALL.inf = 1
+
+[DestinationDirs]
+MQB2ALL.CopyFiles.Ext = 10,System32\Drivers
+MQB2ALL.OvwrFiles.Ext = 10,System32\Drivers
+MQB2ALL.OvwrFiles.Inf = 17
+MQB2ALL.DelFiles.Hwd  = 17
+MQB2ALL.DelFiles.Ext  = 10,System32\Drivers
+MQB2ALL.DelFiles.Inf  = 17
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Class Install Sections
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[ClassInstall]
+AddReg=NECPCIF.Class.AddReg
+
+[ClassInstall32.NT]
+AddReg=NECPCIF.Class.AddReg
+
+[NECPCIF.Class.AddReg]
+HKR,,,,NECPCIF
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Manufacturer and Models Sections 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[Manufacturer]
+%MQB2ALL.MfgName%=Models
+
+[Models]
+%MQB2ALL.DeviceDesc%=MQB2ALL.Dev, USB\VID_0409&PID_007D
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; ControlFlags Section
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[ControlFlags]
+ExcludeFromSelect=*
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;DDInstall and Related Sections
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[MQB2ALL.Dev]
+DriverVer=01/18/2005,1.10.1.1
+CopyFiles=MQB2ALL.CopyFiles.Ext
+AddReg=MQB2ALL.AddReg
+
+[MQB2ALL.Dev.NT]
+CopyFiles=MQB2ALL.CopyFiles.Ext
+AddReg=MQB2ALL.AddReg
+
+[MQB2ALL.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,MQB2ALL.sys
+
+[MQB2ALL.Dev.NT.Services]
+AddService=MQB2ALL, 0x00000002, MQB2ALL.AddService
+
+[MQB2ALL.AddService]
+DisplayName    = %MQB2ALL.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\MQB2ALL.sys
+LoadOrderGroup = Base
+
+[DefaultInstall]
+CopyFiles=MQB2ALL.OvwrFiles.Ext, MQB2ALL.OvwrFiles.Inf
+DelFiles=MQB2ALL.DelFiles.Hwd
+
+[DefaultInstall.NT]
+CopyFiles=MQB2ALL.OvwrFiles.Ext
+
+[DefaultInstall.NT.Services]
+
+[DefaultUninstall]
+DelFiles=MQB2ALL.DelFiles.Ext, MQB2ALL.DelFiles.Inf
+
+[DefaultUninstall.NT]
+DelFiles=MQB2ALL.DelFiles.Ext
+
+[DefaultUninstall.NT.Services]
+
+[MQB2ALL.CopyFiles.Ext]
+MQB2ALL.sys
+
+[MQB2ALL.OvwrFiles.Ext]
+MQB2ALL.sys,,,0x00000004
+
+[MQB2ALL.OvwrFiles.Inf]
+MQB2ALL.inf,,,0x00000004
+
+[MQB2ALL.DelFiles.Hwd]
+drvdata.bin
+drvidx.bin
+
+[MQB2ALL.DelFiles.Ext]
+MQB2ALL.sys
+
+[MQB2ALL.DelFiles.Inf]
+MQB2ALL.inf
+MQB2ALL.pnf
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Strings Sections
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[Strings]
+MQB2ALL.Provider="NEC Electronics"
+MQB2ALL.MfgName="NEC Electronics"
+MQB2ALL.DiskDesc="MINICUBE2 USB Driver Setup"
+MQB2ALL.DeviceDesc="NEC Electronics IE-PC Interface [MINICUBE2 USB]"
+MQB2ALL.SvcDesc="NEC Electronics MINICUBE2 USB Interface"

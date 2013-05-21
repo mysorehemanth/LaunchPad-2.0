@@ -1,0 +1,13 @@
+// FoUSB script file
+Desc=Erase Script
+File=
+MCU=M30102F3
+Reprogram=No
+ID=00000000000000
+Erase=No
+EraseAll=Yes
+Program=No
+Verify=No
+DispSuccessful=No
+DisableMsgBoxes=No
+LogMessages=No

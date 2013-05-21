@@ -1,0 +1,10 @@
+// FoUSB script file
+Desc=Graphic Keypad with Tamper 10MEG
+File=S:\Digiflex\Production\Firmware\CP1000 Rev 1.02 Rev H pcb or higher\cp100_1r02.mot
+MCU=M30102F3
+Reprogram=No
+ID=00000000000000
+Erase=Yes
+Program=Yes
+Verify=Yes
+DispSuccessful=No

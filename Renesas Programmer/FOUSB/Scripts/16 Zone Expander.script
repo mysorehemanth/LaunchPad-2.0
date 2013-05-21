@@ -1,0 +1,13 @@
+// FoUSB script file
+Desc=16 Zone Expander
+File=S:\Digiflex\Production\Firmware\CM105 16 Zone Expander\16 Zone Expander 1R05.mot
+MCU=M30102F3
+Reprogram=No
+ID=00000000000000
+Erase=No
+EraseAll=No
+Program=Yes
+Verify=Yes
+DispSuccessful=Yes
+DisableMsgBoxes=No
+LogMessages=No

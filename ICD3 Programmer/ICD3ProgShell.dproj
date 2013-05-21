@@ -1,0 +1,105 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{0A8800AB-6236-41D8-A0EA-C8C7A6450939}</ProjectGuid>
+			<MainSource>ICD3ProgShell.dpr</MainSource>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+			<ProjectVersion>12.0</ProjectVersion>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_DependencyCheckOutputName>ICD3ProgShell.exe</DCC_DependencyCheckOutputName>
+			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;$(DCC_UnitAlias)</DCC_UnitAlias>
+			<DCC_UsePackage>vcl;rtl;vclx;vclactnband;xmlrtl;vclimg;dbrtl;vcldb;bdertl;vcldbx;vcltouch;dsnap;dsnapcon;TeeUI;Tee;TeeDB;vclib;ibxpress;adortl;IndyCore;IndySystem;IndyProtocols;inet;intrawebdb_100_140;Intraweb_100_140;VclSmp;vclie;websnap;webdsnap;inetdb;inetdbbde;inetdbxpress;soaprtl;vclribbon;dbexpress;DbxCommonDriver;DataSnapIndy10ServerTransport;DataSnapProviderClient;DataSnapServer;DbxClientDriver;DBXInterBaseDriver;DBXMySQLDriver;dbxcds;DBXFirebirdDriver;DBXSybaseASEDriver;DBXSybaseASADriver;DBXOracleDriver;DBXMSSQLDriver;DBXInformixDriver;DBXDb2Driver;dclRBE1214;rbCIDE1214;rbIDE1214;rbRCL1214;rbBDE1214;rbUSERDesign1214;rbUSER1214;rbDIDE1214;rbDAD1214;dclRBBDE1214;rbDBDE1214;rbDB1214;dclRBADO1214;rbADO1214;dclRBDBE1214;rbDBE1214;dclRBIBE1214;rbIBE1214;rbRIDE1214;rbRAP1214;lmdrtl10rt_140;lmdrtlx10rt_140;lmdinspector10rt_140;lmdthemes10rt_140;lmdprint10rt_140;lmdplugin10rt_140;lmdcore10rt_140;lmdgrid10rt_140;lmdtools10rt_140;lmdtoolsdb10rt_140;lmdtxt10rt_140;lmdtxtdb10rt_140;lmdrtf10rt_140;lmdrtfdb10rt_140;lmdshell10rt_140;lmdsys10rt_140;lmdweb10rt_140;lmdsearchdb10rt_140;lmdsearch10rt_140;lmdbar10rt_140;lmdchart10rt_140;lmdchartdb10rt_140;lmdstorage10rt_140;lmdfx10rt_140;lmddocking10rt_140;lmdscriptimp10rt_140;lmdscript10rt_140;lmdsyntax10rt_140;lmddesign10rt_140;lmdide10rt_140;lmdelcore10rt_140;lmdeldb10rt_140;lmdelpro10rt_140;CPortLibD2010;cxLibraryD14;dxCoreD14;cxPageControlD14;dxBarD14;cxBarEditItemD14;dxBarDBNavD14;dxBarExtDBItemsD14;dxBarExtItemsD14;dxRibbonD14;dxdborD14;dxdbtrD14;dxDockingD14;dxFlowChartD14;dxLayoutControlD14;dxmdsD14;dxNavBarD14;cxPivotGridD14;cxPivotGridChartD14;cxPivotGridOLAPD14;dxPsPrVwAdvD14;cxEditorsD14;cxExtEditorsD14;dxPSCoreD14;dxPScxPCProdD14;dxPScxCommonD14;dxPScxExtCommonD14;dxPSDBTeeChartD14;dxPSdxDBTVLnkD14;dxPSdxLC2LnkD14;dxPScxPivotGrid2LnkD14;dxPScxGrid6LnkD14;dxPScxTL5LnkD14;dxPScxScheduler3LnkD14;dxPScxSSLnkD14;dxPScxVGridLnkD14;dxPSLnksD14;dxPSdxDBOCLnkD14;dxPSdxFCLnkD14;dxPSdxOCLnkD14;dxPSPrVwRibbonD14;cxGridD14;cxTreeListD14;cxTreeListdxBarPopupMenuD14;cxSchedulerD14;cxSchedulerGridD14;dxComnD14;dxsbD14;dxSkinBlackD14;dxSkinsCoreD14;dxSkinBlueD14;dxSkinCaramelD14;dxSkinCoffeeD14;dxSkinDarkRoomD14;dxSkinDarkSideD14;dxSkinFoggyD14;dxSkinGlassOceansD14;dxSkiniMaginaryD14;dxSkinLilianD14;dxSkinLiquidSkyD14;dxSkinLondonLiquidSkyD14;dxSkinMcSkinD14;dxSkinMoneyTwinsD14;dxSkinOffice2007BlackD14;dxSkinOffice2007BlueD14;dxSkinOffice2007GreenD14;dxSkinOffice2007PinkD14;dxSkinOffice2007SilverD14;dxSkinPumpkinD14;dxSkinSevenD14;dxSkinSharpD14;dxSkinSilverD14;dxSkinSpringTimeD14;dxSkinStardustD14;dxSkinSummer2008D14;dxSkinValentineD14;dxSkinXmas2008BlueD14;dxSkinsdxBarPainterD14;dxSkinsdxDLPainterD14;dxSkinsdxNavBar2PainterD14;dxSkinscxPCPainterD14;dxSkinsdxRibbonPainterD14;dxSkinscxScheduler3PainterD14;dcldxSkinsCoreD14;dxSpellCheckerD14;cxSpreadSheetD14;dxtrmdD14;cxVerticalGridD14</DCC_UsePackage>
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<DCC_Platform>x86</DCC_Platform>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_DebugInformation>false</DCC_DebugInformation>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="ICD3ProgShell.dpr">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="ICD3Caller.pas">
+				<Form>Form1</Form>
+			</DCCReference>
+			<DCCReference Include="..\DevLogin.pas">
+				<Form>Login</Form>
+			</DCCReference>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType>VCLApplication</Borland.ProjectType>
+			<BorlandProject>
+				<Delphi.Personality>
+					<Source>
+						<Source Name="MainSource">ICD3ProgShell.dpr</Source>
+					</Source>
+					<Parameters>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+					</Parameters>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">True</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">2</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">1030</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">3081</VersionInfo>
+						<VersionInfo Name="CodePage">1252</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName">Digiflex Pty Ltd</VersionInfoKeys>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">1.2.0.1030</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName">ADARA</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName">Solution Link Remote Access Software</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductVersion">1.1.5.327</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments">CD:20091101</VersionInfoKeys>
+					</VersionInfoKeys>
+				</Delphi.Personality>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>

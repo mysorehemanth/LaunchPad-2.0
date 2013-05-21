@@ -1,0 +1,10 @@
+// FoUSB script file
+Desc=Graphic Version 1.04 EUROPE ONLY
+File=S:\Digiflex\Production\Firmware\CP1000 Rev 1.04 Rev H pcb or higher\CP100_Graphic_1R04.mot
+MCU=M30102F3
+Reprogram=No
+ID=00000000000000
+Erase=Yes
+Program=Yes
+Verify=Yes
+DispSuccessful=No
